@@ -7,9 +7,9 @@ package org.zougames.character
 	public class Character 
 	{
 		
-		private var speed:Number;
+		private var _speed:Number;
 		
-		private var life:Number;
+		private var _life:Number;
 		
 		public function Character() 
 		{

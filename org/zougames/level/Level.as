@@ -9,7 +9,7 @@ package org.zougames.level
 	public class Level extends MovieClip
 	{
 		
-		private character:Character;
+		private var character:Character;
 		
 		public function Level() 
 		{
