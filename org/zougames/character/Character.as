@@ -2,12 +2,13 @@ package org.zougames.character
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
+	import org.zougames.graphics.Animation;
 	import org.zougames.level.Level;
 	/**
 	 * ...
 	 * @author Sadjow Leão
 	 */
-	public class Character extends MovieClip
+	public class Character extends MovieClip 
 	{
 		
 		private var _speedX:Number;
@@ -36,13 +37,14 @@ package org.zougames.character
 		}
 		
 		public function enterFrame(e:Event) {
+			
 			// Movimentação
 			x += speedX;
 			y += speedY;
 		}
 		
-		public function get isOnFloor() {
-			return y == _level._floor.y;
+		public function get isOnFloor() {			
+			return y >= _level._floor.y;
 		}
 		
 		public function get isDead() {

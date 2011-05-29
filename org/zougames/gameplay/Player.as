@@ -28,6 +28,7 @@ package org.zougames.gameplay
 		override public function enterFrame(e:Event)
 		{
 			super.enterFrame(e);
+			
 			if (isOnFloor)
 			{
 				gotoAndStop("correndo");
@@ -56,7 +57,6 @@ package org.zougames.gameplay
 					//speedX = -7;
 				break;
 				case 38: // Seta para cima
-					speedY = -20;
 					gotoAndStop("pulando");
 				break;
 				case 39: // Seta para direita.

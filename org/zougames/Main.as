@@ -29,13 +29,10 @@ package org.zougames
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 				
-			// Atalhos.
 			
 			
 			// Foco para o treclado.
 			stage.focus = stage;
-			
-			
 			
 			// Eventos
 			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
