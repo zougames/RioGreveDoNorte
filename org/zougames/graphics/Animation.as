@@ -16,6 +16,8 @@ package org.zougames.graphics
 		
 		public function Animation() 
 		{
+			addEventListener(Event.REMOVED_FROM_STAGE, tearDown);
+			
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
 		}
@@ -34,13 +36,16 @@ package org.zougames.graphics
 			addEventListener(AnimationEvent.ENDED, 	endedHandler);
 			addEventListener(AnimationEvent.LOOP, loopHandler);
 			
+			// Primeiro frame occore antes de adicionar o evento.
+			enterFrameHandler();
 		}
 		
-		public function enterFrameHandler(e:Event) 
+		public function enterFrameHandler(e:Event = null) 
 		{
 			
 			if (currentFrame == 1 && _enterFrameCount == 0)
 			{
+				trace('started: ' + this);
 				dispatchEvent(new AnimationEvent(AnimationEvent.STARTED));
 			}
 			
@@ -50,11 +55,13 @@ package org.zougames.graphics
 				if (_isLoop)
 				{ 
 					_loopCount++;
+					trace('loop: ' + this);
 					dispatchEvent(new AnimationEvent(AnimationEvent.LOOP));
 				} 
 				else
 				{
 					stop();
+					trace('ended: ' + this);
 					dispatchEvent(new AnimationEvent(AnimationEvent.ENDED));
 				}
 					
@@ -65,17 +72,22 @@ package org.zougames.graphics
 		
 		protected function startedHandler(e:AnimationEvent)
 		{
-			trace('started');
+			
 		}
 		
 		protected function endedHandler(e:AnimationEvent)
 		{
-			trace('ended');
+			
 		}
 		
 		protected function loopHandler(e:AnimationEvent)
 		{
-			trace('loop');
+			
+		}
+		
+		protected function tearDown(e:Event)
+		{
+			removeEventListener(Event.ENTER_FRAME, enterFrameHandler);
 		}
 		
 		public function get isLoop() {

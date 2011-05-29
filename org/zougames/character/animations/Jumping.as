@@ -13,9 +13,18 @@ package org.zougames.character.animations
 			isLoop = false;
 		}
 		
-		override protected function startedHandler(e:AnimationEvent) {
-			character.spe
+		override protected function startedHandler(e:AnimationEvent) 
+		{
+			_character.jumpingCount++;	
+			_character.speedY = -15;
 		}
+		
+		override protected function endedHandler(e:AnimationEvent)
+		{
+			stop();
+			this._character.gotoAndStop('midair');
+		}
+		
 		
 	}
 

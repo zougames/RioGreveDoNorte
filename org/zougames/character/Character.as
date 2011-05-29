@@ -18,6 +18,8 @@ package org.zougames.character
 		
 		public var _level:Level;
 		
+		private var _jumpingCount:Number = 0;
+		
 		
 		public function Character() 
 		{
@@ -41,6 +43,10 @@ package org.zougames.character
 			// Movimentação
 			x += speedX;
 			y += speedY;
+			
+			if (isOnFloor)
+				jumpingCount = 0;
+			
 		}
 		
 		public function get isOnFloor() {			
@@ -51,6 +57,10 @@ package org.zougames.character
 			return _life <= 0;
 		}
 		
+		public function get isFalling() {
+			return _speedY > 0;
+		}
+		
 		public function get level():Level
 		{
 			return _level;
@@ -59,6 +69,16 @@ package org.zougames.character
 		public function set level(value:Level)
 		{
 			_level = value;
+		}
+		
+		public function get jumpingCount()
+		{
+			return _jumpingCount;
+		}
+		
+		public function set jumpingCount(v:Number)
+		{
+			_jumpingCount = v;
 		}
 		
 		public function get speedX()

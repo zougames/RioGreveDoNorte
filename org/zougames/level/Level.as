@@ -28,7 +28,7 @@ package org.zougames.level
 		{
 			// Valores default
 			
-			_gravity = 2;
+			_gravity = 1;
 			_characters = new Array();
 			
 			if (stage) init();

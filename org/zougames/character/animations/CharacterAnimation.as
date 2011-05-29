@@ -10,7 +10,7 @@ package org.zougames.character.animations
 	public class CharacterAnimation extends Animation
 	{
 		
-		private var _character:Character;
+		protected var _character:Character;
 		
 		public function CharacterAnimation() 
 		{
@@ -19,9 +19,10 @@ package org.zougames.character.animations
 		
 		override protected function init(e:Event = null)
 		{
-			super.init(e);
 			
 			_character = Character(parent);
+			
+			super.init(e);
 		}
 		
 		public function get character()
