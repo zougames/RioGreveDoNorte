@@ -1,26 +1,23 @@
 package org.zougames.character.animations 
 {
 	import org.zougames.graphics.AnimationEvent;
+	
 	/**
 	 * ...
 	 * @author Sadjow Leão
 	 */
-	public class Running extends CharacterAnimation
+	public class SuperSpeedRunning extends CharacterAnimation
 	{
 		
-
-		public function Running() 
+		public function SuperSpeedRunning() 
 		{
 			
 		}
 		
 		override protected function startedHandler(e:AnimationEvent) 
 		{
-			_character.speedX = 1;
+			_character.speedX = 3;
 		}
-		
-		
-		
 		
 	}
 

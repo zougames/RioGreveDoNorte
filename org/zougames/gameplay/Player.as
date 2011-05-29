@@ -18,7 +18,7 @@ package org.zougames.gameplay
 		override protected function init(e:Event = null)
 		{
 			super.init(e);
-			speedX = 1;
+			
 			
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler);
@@ -38,6 +38,8 @@ package org.zougames.gameplay
 				case 37: // Seta da esquerda.
 				case 39: // Seta para direita.
 					//speedX = 0;
+					if (currentFrameLabel == 'superspeedrunning')
+						gotoAndStop('running');
 				break;
 				
 				default:
@@ -57,6 +59,8 @@ package org.zougames.gameplay
 				break;
 				case 39: // Seta para direita.
 					//speedX = 7;
+					if (isOnFloor && currentFrameLabel != 'superspeedrunning')
+						gotoAndStop('superspeedrunning');
 				break;
 				default:
 			}

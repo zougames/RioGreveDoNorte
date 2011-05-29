@@ -123,12 +123,12 @@ package org.zougames.level
 		
 		private function scrollStage() 
 		{
-			/*
-			_boundaries.x += (stage.stageWidth * 0.5) - _player.x;
-			_player.x = stage.stageWidth * 0.5;
-			_boundaries.y += (stage.stageHeight * 0.5) - _player.y;
-			_player.y = stage.stageHeight * 0.5;
-			*/
+			
+			this.x +=  -_player.speedX;
+			//_player.x = stage.stageWidth * 0.5;
+			//this.y += (stage.stageHeight * 0.5) - _player.y;
+			//_player.y = stage.stageHeight * 0.5;
+			
 		}
 		
 		
