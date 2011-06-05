@@ -18,7 +18,7 @@ package org.zougames.gameplay
 		
 		public function Player() 
 		{
-			
+			_stateManager = new PlayerStateManager(this);
 		}
 		
 		override protected function init(e:Event = null)

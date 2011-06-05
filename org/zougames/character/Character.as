@@ -22,7 +22,7 @@ package org.zougames.character
 		private var _jumpingCount:Number = 0;
 		
 		// Gerencia o estado do personagem
-		private var _stateManager:CharacterStateManager;
+		protected var _stateManager:CharacterStateManager;
 		
 		
 		public function Character() 

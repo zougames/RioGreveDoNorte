@@ -89,7 +89,9 @@ package org.zougames.character
 			for (var i:* in _animationsClasses)
 			{
 				var aName = _animationsClasses[i];
-				
+				var clazz:Class = getDefinitionByName(aName) as Class;
+				_animations[aName] = new clazz();
+				trace(_animations[aName]);
 			}
 		}
 		
