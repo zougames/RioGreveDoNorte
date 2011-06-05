@@ -2,6 +2,7 @@ package org.zougames.character
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
+	import org.zougames.character.animations.CharacterAnimation;
 	import org.zougames.graphics.Animation;
 	import org.zougames.level.Level;
 	/**
@@ -20,16 +21,25 @@ package org.zougames.character
 		
 		private var _jumpingCount:Number = 0;
 		
+		// Gerencia o estado do personagem
+		private var _stateManager:CharacterStateManager;
+		
 		
 		public function Character() 
 		{
+			
+			_stateManager = new CharacterStateManager(this, "org.zougames.character.animations.");
+			
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 		
 		protected function init(e:Event = null)
 		{
+			// Pausa o MovieClip do personagem
 			stop();
+			
+			// Inicializa as animações
 		}
 		
 		public function reset()
@@ -38,7 +48,8 @@ package org.zougames.character
 			_speedY = 0;
 		}
 		
-		public function enterFrame(e:Event) {
+		public function enterFrame(e:Event)
+		{
 			
 			// Movimentação
 			x += speedX;
@@ -49,7 +60,13 @@ package org.zougames.character
 			
 		}
 		
-		public function get isOnFloor() {			
+		public function setCurrentAnimation(a:CharacterAnimation)
+		{
+			_stateManager.currentAnimation = a;
+		}
+		
+		public function get isOnFloor()
+		{			
 			return y >= _level._floor.y;
 		}
 		
@@ -100,6 +117,7 @@ package org.zougames.character
 		{
 			_speedY = value;
 		}
+		
 		
 	}
 
