@@ -1,5 +1,6 @@
 package org.zougames.character.animations 
 {
+	import org.zougames.graphics.AnimationEvent;
 	/**
 	 * ...
 	 * @author Sadjow Leão
@@ -9,7 +10,13 @@ package org.zougames.character.animations
 		
 		public function Slide() 
 		{
-			
+			isLoop = false;
+		}
+		
+		override protected function endedHandler(e:AnimationEvent)
+		{
+			stop();
+			this._character.gotoAndStop('running');
 		}
 		
 	}

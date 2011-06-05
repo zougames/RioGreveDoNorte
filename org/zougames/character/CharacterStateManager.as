@@ -84,7 +84,7 @@ package org.zougames.character
 			
 		}
 		
-		public function initAnimationsNames()
+		public function instanceAnimations()
 		{
 			for (var i:* in _animationsClasses)
 			{

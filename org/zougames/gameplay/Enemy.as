@@ -17,7 +17,7 @@ package org.zougames.gameplay
 		override protected function init(e:Event = null)
 		{
 			super.init(e);
-			speedX = 1;
+			speedX = 10;
 		}
 		
 	}

@@ -1,6 +1,8 @@
 package org.zougames.character.animations 
 {
+	import flash.events.Event;
 	import org.zougames.graphics.AnimationEvent;
+	import org.zougames.objects.MissileEmitter;
 	
 	/**
 	 * ...
@@ -9,14 +11,11 @@ package org.zougames.character.animations
 	public class SuperSpeedRunning extends CharacterAnimation
 	{
 		
-		public function SuperSpeedRunning() 
-		{
-			
-		}
+		
 		
 		override protected function startedHandler(e:AnimationEvent) 
 		{
-			_character.speedX = 3;
+			_character.speedX = 80;
 		}
 		
 	}

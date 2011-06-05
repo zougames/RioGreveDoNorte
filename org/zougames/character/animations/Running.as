@@ -16,7 +16,7 @@ package org.zougames.character.animations
 		
 		override protected function startedHandler(e:AnimationEvent) 
 		{
-			_character.speedX = 1;
+			_character.speedX = 10;
 		}
 		
 		

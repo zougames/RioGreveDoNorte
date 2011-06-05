@@ -44,7 +44,7 @@ package org.zougames.gameplay
 				case Keyboard.LEFT: // Seta da esquerda.
 				case Keyboard.RIGHT: // Seta para direita.
 					//speedX = 0;
-					if (currentFrameLabel == CharacterStateManager.SUPER_SPEED_RUNNING)
+					if (currentFrameLabel == 'superspeedrunning')
 						gotoAndStop('running');
 				break;
 				
